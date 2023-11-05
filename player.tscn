@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwnaf8ecncgat"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_dafwh"]
+[ext_resource type="Texture2D" uid="uid://dc2hoyypjm28m" path="res://icon.svg" id="2_t14hm"]
+[ext_resource type="Script" path="res://AttackArea2D.gd" id="3_qc2g2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bccjl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t14hm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s0dn"]
+radius = 164.924
+
+[node name="Player" type="Node2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_dafwh")
+
+[node name="BodyArea2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BodyArea2D"]
+position = Vector2(-4.76837e-07, 1.19209e-07)
+polygon = PackedVector2Array(-59, -66, 69, -66, 69, 62, -60, 60)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BodyArea2D"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_bccjl")
+
+[node name="AttackArea2D" type="Area2D" parent="." groups=["player_attack"]]
+scale = Vector2(1, 1)
+script = ExtResource("3_qc2g2")
+
+[node name="AttackCollision" type="CollisionShape2D" parent="AttackArea2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_2s0dn")
+
+[node name="AttackCD" type="Timer" parent="AttackArea2D"]
+one_shot = true
+
+[connection signal="area_shape_entered" from="BodyArea2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="timeout" from="AttackArea2D/AttackCD" to="AttackArea2D" method="_on_attack_cd_timeout"]
