@@ -15,6 +15,7 @@ My first video game using the game engine [Godot](https://godotengine.org/).
 ## To be implemented 
 - Soldiers
 - Randomise spawn timing
+
 - Background art
   
 ## Other Ideas
@@ -23,3 +24,5 @@ My first video game using the game engine [Godot](https://godotengine.org/).
 - Enemy towers
 - Checkpoints and mini-bosses
 
+## Demo 
+[demo-10Nov23.webm](https://github.com/kwdChan/game-infiltration/assets/64915487/10d50165-6310-4865-8d4d-5b8148982103)
