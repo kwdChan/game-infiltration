@@ -9,14 +9,11 @@ My first video game using the game engine [Godot](https://godotengine.org/).
 - The player get more scores per second if there're more soldiers on the screen 
 
 ## Status 
-- Some base game mechanics are there but there's no art. 
-- Currently working working on the character art
-  - Learning to draw animated characters at the moment :)
-  - The next version will just be moving skeletons
+- Used free assets for character arts
+- Randomise enemy moving speed and vision range
 
 ## To be implemented 
 - Soldiers
-- Randomise enemy moving speed and vision range
 - Randomise spawn timing
 - Background art
   

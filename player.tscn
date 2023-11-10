@@ -1,22 +1,265 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwnaf8ecncgat"]
+[gd_scene load_steps=53 format=3 uid="uid://cwnaf8ecncgat"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dafwh"]
-[ext_resource type="Texture2D" uid="uid://dc2hoyypjm28m" path="res://icon.svg" id="2_t14hm"]
+[ext_resource type="Texture2D" uid="uid://ct4c1dobdy0yx" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack down1.png" id="2_cu58y"]
+[ext_resource type="Texture2D" uid="uid://2ocuhyatni0l" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack down2.png" id="3_1co3e"]
 [ext_resource type="Script" path="res://AttackArea2D.gd" id="3_qc2g2"]
+[ext_resource type="Texture2D" uid="uid://ov3ka7wmdbbm" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack down3.png" id="4_j23ry"]
+[ext_resource type="Texture2D" uid="uid://24gy6lrqmkj2" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack down4.png" id="5_vernf"]
+[ext_resource type="Texture2D" uid="uid://hev1pu1j1eug" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack left1.png" id="6_ldaqx"]
+[ext_resource type="Texture2D" uid="uid://1smxnaau8yaa" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack left2.png" id="7_r5bs7"]
+[ext_resource type="Texture2D" uid="uid://clwlf0w2l8ugv" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack left3.png" id="8_tnvww"]
+[ext_resource type="Texture2D" uid="uid://denliam6fkal7" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack left4.png" id="9_hqkgs"]
+[ext_resource type="Texture2D" uid="uid://b40qrh1byqmre" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack right1.png" id="10_2k07i"]
+[ext_resource type="Texture2D" uid="uid://bt0dwvgi7tif2" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack right2.png" id="11_6euxn"]
+[ext_resource type="Texture2D" uid="uid://df83ri8lxr4xp" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack right3.png" id="12_8bs73"]
+[ext_resource type="Texture2D" uid="uid://cr8c1bmrhircd" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack right4.png" id="13_ioyui"]
+[ext_resource type="Texture2D" uid="uid://cu8tgl2k0htdf" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack up1.png" id="14_p481b"]
+[ext_resource type="Texture2D" uid="uid://drehp2aav724f" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack up2.png" id="15_4u2oj"]
+[ext_resource type="Texture2D" uid="uid://jh0bhjfwcvrb" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack up3.png" id="16_wv8j5"]
+[ext_resource type="Texture2D" uid="uid://mpe2fe6pyw12" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack up4.png" id="17_6yo4n"]
+[ext_resource type="Texture2D" uid="uid://spui51lx81mn" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle down1.png" id="18_wgdti"]
+[ext_resource type="Texture2D" uid="uid://bf3yj125ptqki" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle down2.png" id="19_my1qr"]
+[ext_resource type="Texture2D" uid="uid://cu8mearbqbi5j" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle down3.png" id="20_3w7ys"]
+[ext_resource type="Texture2D" uid="uid://8cx4scsqisds" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle down4.png" id="21_puqd5"]
+[ext_resource type="Texture2D" uid="uid://bh3k1rxm2xd5d" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle left1.png" id="22_3ylr4"]
+[ext_resource type="Texture2D" uid="uid://ge7tu6lqjfom" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle left2.png" id="23_6wjbs"]
+[ext_resource type="Texture2D" uid="uid://cjxg8ars53u6v" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle left3.png" id="24_sjbrv"]
+[ext_resource type="Texture2D" uid="uid://qnytoyl316lt" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle left4.png" id="25_leljl"]
+[ext_resource type="Texture2D" uid="uid://c1wyggo667hkb" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle right1.png" id="26_lmoe3"]
+[ext_resource type="Texture2D" uid="uid://creqs0ok2162q" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle right2.png" id="27_8cpeg"]
+[ext_resource type="Texture2D" uid="uid://ch4iykmeipn17" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle right3.png" id="28_qgii5"]
+[ext_resource type="Texture2D" uid="uid://b2t07i3kj7ofg" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle right4.png" id="29_dawe4"]
+[ext_resource type="Texture2D" uid="uid://c6blm3tai7ad6" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle up1.png" id="30_b8e7x"]
+[ext_resource type="Texture2D" uid="uid://cvar084yn1xw5" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle up2.png" id="31_dnwbk"]
+[ext_resource type="Texture2D" uid="uid://bjjdme014s843" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle up3.png" id="32_msaok"]
+[ext_resource type="Texture2D" uid="uid://de3djx8cgw6fx" path="res://assets/Top down character template by RgsDev/Character with sword and shield/idle/idle up4.png" id="33_6r20h"]
+[ext_resource type="Texture2D" uid="uid://f8o6ffyrnxii" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk down1.png" id="34_pp2ih"]
+[ext_resource type="Texture2D" uid="uid://ct27ovloprbhf" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk down2.png" id="35_outju"]
+[ext_resource type="Texture2D" uid="uid://d1s7dn6ejyrb3" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk down3.png" id="36_ymjr3"]
+[ext_resource type="Texture2D" uid="uid://b1duocyr6nct7" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk down4.png" id="37_105v0"]
+[ext_resource type="Texture2D" uid="uid://drbd6cwuxqipf" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk left1.png" id="38_psugn"]
+[ext_resource type="Texture2D" uid="uid://b6l5s0tkjj6x2" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk left2.png" id="39_ht7ox"]
+[ext_resource type="Texture2D" uid="uid://bao3ayl0lccvi" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk left3.png" id="40_jcb40"]
+[ext_resource type="Texture2D" uid="uid://brew6pns51pp4" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk left4.png" id="41_hne1w"]
+[ext_resource type="Texture2D" uid="uid://bw8ixp4r3ko8" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk right1.png" id="42_veeh7"]
+[ext_resource type="Texture2D" uid="uid://d3ptquslxsnue" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk right2.png" id="43_u6jyk"]
+[ext_resource type="Texture2D" uid="uid://dubji4oxk0lkv" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk right3.png" id="44_mkcbl"]
+[ext_resource type="Texture2D" uid="uid://swjdurvlgw0s" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk right4.png" id="45_hyfem"]
+[ext_resource type="Texture2D" uid="uid://b2hgrdg53hpvp" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk up1.png" id="46_lxlo6"]
+[ext_resource type="Texture2D" uid="uid://cix8ax6gb4klv" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk up2.png" id="47_4hk1x"]
+[ext_resource type="Texture2D" uid="uid://dkpxn2qsocp6w" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk up3.png" id="48_1wjts"]
+[ext_resource type="Texture2D" uid="uid://ki5umi2nu8qy" path="res://assets/Top down character template by RgsDev/Character with sword and shield/walk/walk up4.png" id="49_4dqwx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bccjl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_t14hm")
+"texture": ExtResource("2_cu58y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1co3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j23ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vernf")
 }],
 "loop": true,
-"name": &"default",
+"name": &"attach_down",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ldaqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r5bs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tnvww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hqkgs")
+}],
+"loop": true,
+"name": &"attack_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2k07i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6euxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8bs73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ioyui")
+}],
+"loop": true,
+"name": &"attack_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p481b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4u2oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wv8j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6yo4n")
+}],
+"loop": true,
+"name": &"attack_up",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_wgdti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_my1qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3w7ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_puqd5")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_3ylr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6wjbs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sjbrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_leljl")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_lmoe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_8cpeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qgii5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dawe4")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_b8e7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_dnwbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_msaok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_6r20h")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_pp2ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_outju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ymjr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_105v0")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_psugn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ht7ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jcb40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_hne1w")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_veeh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_u6jyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_mkcbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hyfem")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_lxlo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_4hk1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1wjts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4dqwx")
+}],
+"loop": true,
+"name": &"walk_up",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2s0dn"]
-radius = 164.924
+radius = 121.655
 
 [node name="Player" type="Node2D"]
 scale = Vector2(0.4, 0.4)
@@ -26,22 +269,23 @@ script = ExtResource("1_dafwh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BodyArea2D"]
 position = Vector2(-4.76837e-07, 1.19209e-07)
-polygon = PackedVector2Array(-59, -66, 69, -66, 69, 62, -60, 60)
+polygon = PackedVector2Array(-40, -60, 40, -60, 40, 60, -40, 60)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BodyArea2D"]
-scale = Vector2(1, 1)
+[node name="AttackCD" type="Timer" parent="BodyArea2D"]
+wait_time = 0.75
+one_shot = true
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="BodyArea2D"]
+scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_bccjl")
+animation = &"attach_down"
 
 [node name="AttackArea2D" type="Area2D" parent="." groups=["player_attack"]]
-scale = Vector2(1, 1)
 script = ExtResource("3_qc2g2")
 
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackArea2D"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_2s0dn")
 
-[node name="AttackCD" type="Timer" parent="AttackArea2D"]
-one_shot = true
-
+[connection signal="attacking" from="." to="AttackArea2D" method="_on_player_attacking"]
 [connection signal="area_shape_entered" from="BodyArea2D" to="." method="_on_area_2d_area_shape_entered"]
-[connection signal="timeout" from="AttackArea2D/AttackCD" to="AttackArea2D" method="_on_attack_cd_timeout"]
+[connection signal="timeout" from="BodyArea2D/AttackCD" to="." method="_on_attack_cd_timeout"]

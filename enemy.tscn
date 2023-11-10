@@ -1,15 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://cskbvv725whol"]
+[gd_scene load_steps=14 format=3 uid="uid://cskbvv725whol"]
 
-[ext_resource type="Texture2D" uid="uid://dc2hoyypjm28m" path="res://icon.svg" id="1_0dh5r"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_p0ygg"]
+[ext_resource type="Texture2D" uid="uid://bbs17qicmef7x" path="res://assets/1.png" id="2_2j7bh"]
 [ext_resource type="Script" path="res://enemyBody.gd" id="3_5dtpb"]
+[ext_resource type="Texture2D" uid="uid://b50i0bjl6bgvi" path="res://assets/Top down character template by RgsDev/death animation/death1.png" id="3_gn0w5"]
 [ext_resource type="Script" path="res://VisionRange.gd" id="3_q4cmc"]
+[ext_resource type="Texture2D" uid="uid://bko8x57h442go" path="res://assets/Top down character template by RgsDev/death animation/death2.png" id="4_cclqe"]
+[ext_resource type="Texture2D" uid="uid://xt6xpkgyd2cf" path="res://assets/Top down character template by RgsDev/death animation/death3.png" id="5_r7wve"]
+[ext_resource type="Texture2D" uid="uid://dpey5wswcqfyq" path="res://assets/Top down character template by RgsDev/death animation/death4.png" id="6_ttwfc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3sya"]
+atlas = ExtResource("2_2j7bh")
+region = Rect2(58, 40, 34, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vosp7"]
+atlas = ExtResource("2_2j7bh")
+region = Rect2(58, 4, 34, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qde0s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0dh5r")
+"texture": SubResource("AtlasTexture_k3sya")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gn0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cclqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r7wve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ttwfc")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vosp7")
 }],
 "loop": true,
 "name": &"default",
@@ -20,15 +57,18 @@ animations = [{
 blend_mode = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2cvwl"]
-radius = 64.0
-height = 128.0
+radius = 48.0
+height = 96.0
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_p0ygg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 0)
+scale = Vector2(3.23, 3.23)
 sprite_frames = SubResource("SpriteFrames_qde0s")
+frame_progress = 0.222756
 
 [node name="Body" type="Area2D" parent="." groups=["enemy"]]
 material = SubResource("CanvasItemMaterial_32bg5")
@@ -41,8 +81,6 @@ shape = SubResource("CapsuleShape2D_2cvwl")
 script = ExtResource("3_q4cmc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionRange"]
-
-[node name="Sprite2D" type="Sprite2D" parent="VisionRange"]
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 

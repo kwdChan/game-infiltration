@@ -3,6 +3,7 @@ extends Area2D
 var radius = 200
 var color = Color(1.0, 0.0, 0.0, 0.2)
 
+
 func circle_arc_poly(radius, total_angle, centre_angle = 180):
 	var nb_points = 32
 	var points_arc = PackedVector2Array()
@@ -18,16 +19,21 @@ func circle_arc_poly(radius, total_angle, centre_angle = 180):
 
 var points_arc = circle_arc_poly(radius, 45)
 
+
+
+func finalise_range(angle):
+	points_arc = circle_arc_poly(radius, angle)
+	$CollisionPolygon2D.polygon = points_arc
+	queue_redraw()
+
+
 func _draw():
 	draw_polygon(points_arc, PackedColorArray([color]))
+		
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$CollisionPolygon2D.polygon = points_arc
-	
-	pass # Replace with function body.
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
-	
 	pass
