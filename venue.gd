@@ -8,6 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var screen_pos_y = get_viewport_rect().position.y
+	print(screen_pos_y)
+	$EnemySpwanPath2D.position.y = screen_pos_y + 200
 	pass
 
 

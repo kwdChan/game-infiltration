@@ -4,17 +4,21 @@ var sprite_direction = 'up'
 var sprite_state = 'idle'
 var attack_ready = true
 var attack_animate_total_duration = 0.1
-var attack_animate_current_time = -1
-var frame
-var frame_progress
+var attack_animate_current_time = -1.0
+var frame: int
+var frame_progress: float
+var horizontal_margin: Vector2
+var margin_ratio = 0.05
+
 
 signal attacking
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var screen_rect = get_viewport_rect()
+	var margin_size = int(screen_rect.size.x * margin_ratio)
+	horizontal_margin = Vector2(screen_rect.position.x + margin_size, screen_rect.end.x - margin_size)
 	
-	
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +49,8 @@ func _process(delta):
 		position += speed * delta * direction.normalized()
 	else: 
 		sprite_state = 'idle'
+		
+	position.x = clamp(position.x,horizontal_margin[0], horizontal_margin[1])
 		
 	if Input.is_action_just_pressed("spacebar"):
 
