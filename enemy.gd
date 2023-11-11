@@ -41,13 +41,16 @@ func _process(delta):
 		queue_free()
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
-
-
 func _on_body_attacked():
 	# this starts the dying animation 
 	dying_time = 0 
 	$VisionRange/CollisionPolygon2D.disabled = true
 	$VisionRange.hide()
 	
+
+
+func _on_body_area_entered(area):
+	if area.is_in_group('enemy_free_zone'):
+
+		queue_free()
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cwnaf8ecncgat"]
+[gd_scene load_steps=54 format=3 uid="uid://cwnaf8ecncgat"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dafwh"]
 [ext_resource type="Texture2D" uid="uid://ct4c1dobdy0yx" path="res://assets/Top down character template by RgsDev/Character with sword and shield/attack/attack down1.png" id="2_cu58y"]
@@ -261,6 +261,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2s0dn"]
 radius = 121.655
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgip7"]
+size = Vector2(3000, 250)
+
 [node name="Player" type="Node2D"]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_dafwh")
@@ -296,6 +299,13 @@ drag_left_margin = 1.0
 drag_top_margin = 0.5
 drag_right_margin = 1.0
 drag_bottom_margin = 0.8
+
+[node name="EnemyFreeTriggerArea" type="Area2D" parent="." groups=["enemy_free_zone"]]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFreeTriggerArea"]
+position = Vector2(-7.6294e-05, 3115)
+shape = SubResource("RectangleShape2D_kgip7")
 
 [connection signal="attacking" from="." to="AttackArea2D" method="_on_player_attacking"]
 [connection signal="area_shape_entered" from="BodyArea2D" to="." method="_on_area_2d_area_shape_entered"]
