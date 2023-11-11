@@ -1,28 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct1ykgi55y7ec"]
+[gd_scene load_steps=4 format=3 uid="uid://ct1ykgi55y7ec"]
 
 [ext_resource type="Script" path="res://venue.gd" id="1_vh0dr"]
 [ext_resource type="PackedScene" uid="uid://cskbvv725whol" path="res://enemy.tscn" id="2_rjkaa"]
 [ext_resource type="PackedScene" uid="uid://cwnaf8ecncgat" path="res://player.tscn" id="3_hqwn6"]
 
-[sub_resource type="Curve2D" id="Curve2D_4pnqu"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 584, 0)
-}
-point_count = 2
-
 [node name="Venue" type="Node2D"]
 script = ExtResource("1_vh0dr")
 enemy_scene = ExtResource("2_rjkaa")
 
-[node name="EnemySpwanPath2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_4pnqu")
-
-[node name="EnemyLoc" type="PathFollow2D" parent="EnemySpwanPath2D"]
-position = Vector2(64, 0)
-
-[node name="EnemySpwanTimer" type="Timer" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("3_hqwn6")]
-position = Vector2(317, 504)
-
-[connection signal="timeout" from="EnemySpwanTimer" to="." method="_on_enemy_spwan_timer_timeout"]
+position = Vector2(328, 576)

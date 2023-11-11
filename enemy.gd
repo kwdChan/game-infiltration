@@ -1,17 +1,30 @@
 extends Node2D
-var speed = 150
-
-var dying_duration = 1
-var dying_time = -1 
+var speed = 150.0
+var dying_duration = 1.0
+var dying_time = -1.0
 var dying_scale = 5
+var enemy_time_sep = 2.0
+
+func _exit_tree():
+	get_parent().enemy_freed()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var reduction = float(randi_range(5, 10)) / 10
-	speed = speed * reduction
-	$VisionRange.finalise_range(25 / reduction)
-	pass # Replace with function body.
+	get_parent().enemy_created()
 
+	
+func finalise(order, xloc, time_offset):
+	var rand_factor = randf_range(0.5, 1)
+	speed = speed * rand_factor
+	$VisionRange.finalise_range(25 / rand_factor)
+	
+	position.x = xloc
+	
+	var time_before_reaching = order * enemy_time_sep - time_offset
+	
+	position.y = -speed * time_before_reaching
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
